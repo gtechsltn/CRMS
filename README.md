@@ -1,8 +1,9 @@
 # Customer Relationship Management System (CRMS)
 
 + .NET Framework 4.8
-+ Microsoft Visual Studio Enterprise 2022
++ Visual Studio Enterprise 2022
 + SQL Server
++ SQL Server Management Studio (SSMS)
 + ASP.NET Web Application (C#)
 + ASP.NET MVC 5.2.9
 + AdminLTE 3.2.0
@@ -17,20 +18,16 @@
 + https://github.com/gtechsltn/CRMS/
 
 ## Google Drive
-+ DB: https://docs.google.com/spreadsheets/d/1Ndvh-Wn45emAR24H0duBj6JJZOoP3oUTsbyq4Be1qtY/
-+ Plan: 
++ Master Plan: https://docs.google.com/spreadsheets/d/1Ndvh-Wn45emAR24H0duBj6JJZOoP3oUTsbyq4Be1qtY/
 
 ## AdminLTE v3.2.0
 + Download link
 + https://github.com/ColorlibHQ/AdminLTE/releases
 + Dependencies
 + https://adminlte.io/docs/3.2/dependencies.html
-+ Bootstrap 4.6
-+ jQuery 3.5.1
-+ Popper.js 1.16.1
-+ Google Font: Source Sans Pro
-+ Font Awesome Free 5.15.4
-+ DataTables 1.11.4
+  + Bootstrap 4.6
+  + jQuery 3.5.1
+  + Popper.js 1.16.1
 
 ## Request features (TODO)
 + Favicon
