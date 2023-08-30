@@ -5,9 +5,9 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMS", "CRMS\CRMS.csproj", "{FB45B8BE-1368-45A3-AA8A-A421F92EFEF1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0270A942-2ADF-4DF8-959C-CF5F476BE4A4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE337154-0EB0-4C3F-9D50-7D501C54AEB4}"
 	ProjectSection(SolutionItems) = preProject
-		ReadMe.md = ReadMe.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Global
