@@ -46,3 +46,4 @@
 + NULL column + DBNull.Value + SqlDataReader.IsDBNull(idx)
 + https://stackoverflow.com/questions/1772025/sql-data-reader-handling-null-column-values
 + https://makolyte.com/csharp-mapping-nullable-columns-with-sqldatareader/
++ https://gist.github.com/gtechsltn/cf946742191b1e90ef93468f8adbfb90
