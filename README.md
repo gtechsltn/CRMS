@@ -4,11 +4,14 @@
 + Microsoft Visual Studio Enterprise 2022
 + SQL Server
 + ASP.NET Web Application (C#)
-+ MVC 5.2.9.0
-+ AdminLTE
-+ Bootstrap 
-+ jQuery
++ ASP.NET MVC 5.2.9
++ AdminLTE 3.2.0
++ Bootstrap 4.6.0
++ jQuery 3.5.1
 + HTML, CSS, JavaScript
++ Google Font: Source Sans Pro
++ Font Awesome Free 5.15.4
++ DataTables 1.11.4
 
 ## GitHub
 + https://github.com/gtechsltn/CRMS/
@@ -23,11 +26,11 @@
 + Dependencies
 + https://adminlte.io/docs/3.2/dependencies.html
 + Bootstrap 4.6
-+ jQuery 3.5.1+
-+ Popper.js 1.16.1+
-+ Google Font
-+ Font Awesome
-+ DataTables.js 1.11.4
++ jQuery 3.5.1
++ Popper.js 1.16.1
++ Google Font: Source Sans Pro
++ Font Awesome Free 5.15.4
++ DataTables 1.11.4
 
 ## Request features (TODO)
 + Favicon
