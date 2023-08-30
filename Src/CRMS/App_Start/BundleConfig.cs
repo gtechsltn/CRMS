@@ -2,28 +2,27 @@
 
 namespace CRMS
 {
-    public class BundleConfig
+    public static class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
                     "~/Scripts/jquery-{version}.js",
                     "~/Scripts/jquery.validate*",
-                    "~/Content/js/adminlte.js"
+                    "~/Scripts/bootstrap.js",
+                    "~/Content/js/adminlte.js",
+                    "~/Scripts/jquery.dataTables.js",
+                    "~/Scripts/dataTables.bootstrap4.js"
                     ));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                     "~/Scripts/modernizr-*"
                     ));
 
-            bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                    "~/Scripts/bootstrap.js"
-                    ));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                     "~/Content/bootstrap.css",
                     "~/Content/css/adminlte.css",
+                    "~/Content/dataTables.bootstrap4.css",
                     "~/Content/site.css"
                     ));
         }

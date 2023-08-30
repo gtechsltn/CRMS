@@ -10,6 +10,13 @@
 + jQuery
 + HTML, CSS, JavaScript
 
+## GitHub
++ https://github.com/gtechsltn/CRMS/
+
+## Google Drive
++ DB: https://docs.google.com/spreadsheets/d/1Ndvh-Wn45emAR24H0duBj6JJZOoP3oUTsbyq4Be1qtY/
++ Plan: 
+
 ## AdminLTE v3.2.0
 + Download link
 + https://github.com/ColorlibHQ/AdminLTE/releases
@@ -20,7 +27,22 @@
 + Popper.js 1.16.1+
 + Google Font
 + Font Awesome
++ DataTables.js 1.11.4
 
 ## Request features (TODO)
 + Favicon
 + CRUD
+
+## DataTables
++ https://stackoverflow.com/questions/36684959/cannot-read-property-mdata-of-undefined-when-using-datatables-with-colspan
+
+## Stored Procedure CRUD Generate
++ https://dev.to/peledzohar/t-sql-crud-procedures-auto-generator-1cl1
++ https://gist.github.com/gtechsltn/307aa55364a8813c8ae212e909bc237f
+
+## SqlDataReader
++ https://www.akadia.com/services/dotnet_data_reader.html
++ https://dotnettutorials.net/lesson/ado-net-sqldatareader/
++ NULL column + DBNull.Value + SqlDataReader.IsDBNull(idx)
++ https://stackoverflow.com/questions/1772025/sql-data-reader-handling-null-column-values
++ https://makolyte.com/csharp-mapping-nullable-columns-with-sqldatareader/
