@@ -194,7 +194,7 @@ namespace CRMS.Models
 
         public static CustomerModel GetById(int id)
         {
-            var item = new CustomerModel();
+            CustomerModel item = null;
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
@@ -208,20 +208,25 @@ namespace CRMS.Models
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        if (reader.HasRows)
                         {
-                            item.Id = reader.GetSafe<Int32>("Id");
-                            item.Name = reader.GetSafe<string>("Name");
-                            item.PhoneNumber = reader.GetSafe<string>("PhoneNumber");
-                            item.Gender = reader.GetSafe<bool?>("Gender");
-                            item.CCCD = reader.GetSafe<string>("CCCD");
-                            item.Address = reader.GetSafe<string>("Address");
-                            item.DoB = reader.GetSafe<DateTime?>("DoB");
-                            item.YoB = reader.GetSafe<short?>("YoB");
-                            item.Email = reader.GetSafe<string>("Email");
-                            item.Facebook = reader.GetSafe<string>("Facebook");
-                            item.Hobbies = reader.GetSafe<string>("Hobbies");
-                            item.Note = reader.GetSafe<string>("Note");
+                            item = new CustomerModel();
+
+                            while (reader.Read())
+                            {
+                                item.Id = reader.GetSafe<Int32>("Id");
+                                item.Name = reader.GetSafe<string>("Name");
+                                item.PhoneNumber = reader.GetSafe<string>("PhoneNumber");
+                                item.Gender = reader.GetSafe<bool?>("Gender");
+                                item.CCCD = reader.GetSafe<string>("CCCD");
+                                item.Address = reader.GetSafe<string>("Address");
+                                item.DoB = reader.GetSafe<DateTime?>("DoB");
+                                item.YoB = reader.GetSafe<short?>("YoB");
+                                item.Email = reader.GetSafe<string>("Email");
+                                item.Facebook = reader.GetSafe<string>("Facebook");
+                                item.Hobbies = reader.GetSafe<string>("Hobbies");
+                                item.Note = reader.GetSafe<string>("Note");
+                            }
                         }
                     }
                 }

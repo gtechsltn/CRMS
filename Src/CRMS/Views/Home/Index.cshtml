@@ -44,7 +44,7 @@
                                 @Html.DisplayNameFor(model => model.Address)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.DoB)
+                                @Html.DisplayNameFor(model => model.DoB2)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.YoB)
@@ -84,7 +84,7 @@
                                     @Html.DisplayFor(modelItem => item.Address)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.DoB)
+                                    @Html.DisplayFor(modelItem => item.DoB2)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.YoB)
@@ -126,6 +126,19 @@
     <script>
         $(function () {
             console.log('Danh sách khách hàng');
+
+            $("select option[value='false']").each(function () {
+                this.text = 'Nữ';
+            });
+
+            $("select option[value='true']").each(function () {
+                this.text = 'Nam';
+            });
+
+            $("select option[value='']").each(function () {
+                this.text = 'Không xác định';
+            });
+
             $('#myCustomerTable').DataTable({
                 columnDefs: [
                     { orderable: false, targets: [10] },

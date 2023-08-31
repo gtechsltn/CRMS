@@ -1,4 +1,4 @@
-# Customer Relationship Management System (CRMS)
+﻿# Customer Relationship Management System (CRMS)
 
 + .NET Framework 4.8
 + Visual Studio Enterprise 2022
@@ -51,3 +51,29 @@
 ## DBNull
 + https://stackoverflow.com/questions/170186/set-a-database-value-to-null-with-a-sqlcommand-parameters
 + https://stackoverflow.com/questions/13981281/best-method-of-assigning-null-value-to-sqlparameter
+
+## Hander Error
++ https://localhost:44368/Home/Delete
+  + Đúng: https://localhost:44368/Home/Delete/1
+  + Sai: https://localhost:44368/Home/Delete/0
+  + Sai: https://localhost:44368/Home/Delete
+
++ https://localhost:44368/Home/Edit
+  + Đúng: https://localhost:44368/Home/Edit/1
+  + Sai: https://localhost:44368/Home/Delete/0
+  + Sai: https://localhost:44368/Home/Delete
+
+## ASP.NET MVC Razor with DateTime value
++ https://stackoverflow.com/questions/18288675/display-datetime-value-in-dd-mm-yyyy-format-in-asp-net-mvc
+
+## Display Validation Summary in ASP.NET MVC
++ https://www.aspsnippets.com/Articles/Display-Validation-Summary-in-ASPNet-MVC.aspx
++ https://www.tutorialsteacher.com/mvc/htmlhelper-validationsummary
+```
+@Html.ValidationSummary(true, "", new { @class = "error" })
+```
+=>
+```
+@Html.ValidationSummary(false, "", new { @class = "error" })
+```
++ https://stackoverflow.com/questions/12936604/how-to-add-modelstate-addmodelerror-message-when-model-item-is-not-binded

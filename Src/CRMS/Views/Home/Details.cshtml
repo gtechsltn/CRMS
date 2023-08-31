@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <div class="row">
     <div class="col-12">
         <!-- Default box -->
@@ -66,11 +65,11 @@
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.DoB)
+                        @Html.DisplayNameFor(model => model.DoB2)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.DoB)
+                        @Html.DisplayFor(model => model.DoB2)
                     </dd>
 
                     <dt>
@@ -112,12 +111,11 @@
                     <dd>
                         @Html.DisplayFor(model => model.Note)
                     </dd>
-
                 </dl>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                @Html.ActionLink("Sửa đổi", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Sửa", "Edit", new { id = Model.Id }) |
                 @Html.ActionLink("Danh sách", "Index")
             </div>
             <!-- /.card-footer-->
@@ -131,6 +129,18 @@
     <script>
         $(function () {
             console.log('Chi tiết thông tin khách hàng');
+
+            $("select option[value='false']").each(function () {
+                this.text = 'Nữ';
+            });
+
+            $("select option[value='true']").each(function () {
+                this.text = 'Nam';
+            });
+
+            $("select option[value='']").each(function () {
+                this.text = 'Không xác định';
+            });
         });
     </script>
 }
