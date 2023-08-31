@@ -23,7 +23,7 @@
             </div>
             <div class="card-body">
                 <p>
-                    @Html.ActionLink("Create New", "Create")
+                    @Html.ActionLink("Tạo mới khách hàng", "Create")
                 </p>
                 <table id="myCustomerTable" class="table table-bordered table-hover">
                     <thead>
@@ -131,6 +131,9 @@
                     { orderable: false, targets: [10] },
                     { visible: false, targets: [6] }
                 ],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/vi.json',
+                },
             });
         });
     </script>

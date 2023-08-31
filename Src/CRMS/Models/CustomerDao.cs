@@ -159,6 +159,7 @@ namespace CRMS.Models
         public static List<CustomerModel> GetAll()
         {
             var lst = new List<CustomerModel>();
+
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
@@ -226,6 +227,35 @@ namespace CRMS.Models
                 }
             }
             return item;
+        }
+
+        public static int Customer_Delete(int id)
+        {
+            int RETURN_VALUE = 0;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("Customer_Delete", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@Id", SqlDbType.Int, 0);
+                    cmd.Parameters["@Id"].Direction = ParameterDirection.Input;
+                    cmd.Parameters["@Id"].Value = id;
+
+                    cmd.Parameters.Add("@RETURN_VALUE", SqlDbType.Int, 0);
+                    cmd.Parameters["@RETURN_VALUE"].Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters["@RETURN_VALUE"].Value = RETURN_VALUE;
+
+                    cmd.ExecuteNonQuery();
+
+                    RETURN_VALUE = (int)cmd.Parameters["@RETURN_VALUE"].Value;
+                }
+            }
+
+            return RETURN_VALUE;
         }
     }
 }
