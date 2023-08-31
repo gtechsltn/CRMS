@@ -47,3 +47,7 @@
 + https://stackoverflow.com/questions/1772025/sql-data-reader-handling-null-column-values
 + https://makolyte.com/csharp-mapping-nullable-columns-with-sqldatareader/
 + https://gist.github.com/gtechsltn/cf946742191b1e90ef93468f8adbfb90
+
+## DBNull
++ https://stackoverflow.com/questions/170186/set-a-database-value-to-null-with-a-sqlcommand-parameters
++ https://stackoverflow.com/questions/13981281/best-method-of-assigning-null-value-to-sqlparameter

@@ -32,11 +32,55 @@ namespace CRMS.Controllers
         public ActionResult Index()
         {
             var models = CustomerDao.GetAll();
+
             if (models == null)
             {
                 models = new List<CustomerModel>();
             }
+
             return View(models);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var model = CustomerDao.GetById(1);
+
+            if (model == null)
+            {
+                model = new CustomerModel();
+            }
+
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var model = CustomerDao.GetById(1);
+
+            if (model == null)
+            {
+                model = new CustomerModel();
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(CustomerModel customer)
+        {
+            if (ModelState.IsValid)
+            {
+                var rowsAffected = CustomerDao.Customer_Update(customer);
+                if (rowsAffected > 0)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Lỗi rồi");
+                }
+            }
+            return View();
         }
 
         public ActionResult About()
