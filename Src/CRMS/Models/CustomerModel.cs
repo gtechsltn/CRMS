@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace CRMS.Models
 {
@@ -47,7 +48,8 @@ namespace CRMS.Models
         [DisplayName("Sở thích")]
         public string Hobbies { get; set; }
 
-        [DisplayName("Ghi chú")]
+        [AllowHtml]
+        [DisplayName("Ghi chú")]        
         public string Note { get; set; }
     }
 }

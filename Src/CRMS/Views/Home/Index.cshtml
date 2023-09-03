@@ -96,10 +96,10 @@
                                     @Html.DisplayFor(modelItem => item.Facebook)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Hobbies)
+                                    @Html.Raw(item.Hobbies)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Note)
+                                    @Html.Raw(item.Note)
                                 </td>
                                 <td>
                                     @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
@@ -123,7 +123,24 @@
 
 @section Scripts {
 
+    <link href="~/Content/summernote/summernote.css" rel="stylesheet" />
+    <link href="~/Content/summernote/summernote-bs4.css" rel="stylesheet" />
+    <script src="~/Scripts/summernote/summernote.js"></script>
+    <script src="~/Scripts/summernote/summernote-bs4.js"></script>
+    <script src="~/Scripts/summernote/lang/summernote-vi-VN.js"></script>
+
     <script>
+
+        $(function () {
+            $('#Name').focus();
+        });
+
+        $(function () {
+            $(".Hobbies").attr('disabled', true);
+            $(".Note").attr('disabled', true);
+            //$('.Note').summernote();
+        });
+
         $(function () {
             console.log('Danh sách khách hàng');
 

@@ -10,12 +10,15 @@ namespace CRMS
                     "~/Scripts/jquery-{version}.js",
                     "~/Scripts/jquery.validate*",
                     "~/Scripts/bootstrap.js",
+                    "~/Scripts/bootstrap.bundle.js",
                     "~/Content/js/adminlte.js",
                     "~/Scripts/jquery.dataTables.js",
-                    "~/Scripts/dataTables.bootstrap4.js"
+                    "~/Scripts/dataTables.bootstrap4.js",
+                    "~/Scripts/markitup/jquery.markitup.js"
                     ));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                    
                     "~/Scripts/modernizr-*"
                     ));
 

@@ -6,13 +6,17 @@
 + SQL Server Management Studio (SSMS)
 + ASP.NET Web Application (C#)
 + ASP.NET MVC 5.2.9
-+ AdminLTE 3.2.0
-+ Bootstrap 4.6.0
-+ jQuery 3.5.1
 + HTML, CSS, JavaScript
++ jQuery 3.5.1
++ Bootstrap 4.6.0
++ Popper 1.16.1
++ AdminLTE 3.2.0
 + Google Font: Source Sans Pro
 + Font Awesome Free 5.15.4
-+ DataTables 1.11.4
++ jQuery Validation 1.19.5
++ jQuery Validation Unobtrusive 4.0.0
++ jQuery DataTables 1.11.4
++ summernote.editor 0.8.10
 
 ## GitHub
 + https://github.com/gtechsltn/CRMS/
@@ -77,3 +81,11 @@
 @Html.ValidationSummary(false, "", new { @class = "error" })
 ```
 + https://stackoverflow.com/questions/12936604/how-to-add-modelstate-addmodelerror-message-when-model-item-is-not-binded
+
+## Bootstrap WYSIWYG Editor in ASP.NET: Summernote
++ https://summernote.org/
++ https://www.c-sharpcorner.com/article/using-summernote-in-asp-net-mvc-with-saving-image-file-separately/
++ https://www.c-sharpcorner.com/UploadFile/3d39b4/bootstrap-wysiwyg-editor-in-Asp-Net-mvc/
++ AllowHtml in Model class
++ Html.Raw in View Razor
+

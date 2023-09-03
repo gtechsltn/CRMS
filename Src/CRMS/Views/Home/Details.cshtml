@@ -101,7 +101,7 @@
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.Hobbies)
+                        @Html.TextAreaFor(model => model.Hobbies)
                     </dd>
 
                     <dt>
@@ -109,7 +109,7 @@
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.Note)
+                        @Html.TextAreaFor(model => model.Note)
                     </dd>
                 </dl>
             </div>
@@ -126,7 +126,18 @@
 
 @section Scripts {
 
+    <link href="~/Content/summernote/summernote.css" rel="stylesheet" />
+    <link href="~/Content/summernote/summernote-bs4.css" rel="stylesheet" />
+    <script src="~/Scripts/summernote/summernote.js"></script>
+    <script src="~/Scripts/summernote/summernote-bs4.js"></script>
+    <script src="~/Scripts/summernote/lang/summernote-vi-VN.js"></script>
+
     <script>
+
+        $(function () {
+            $('#Note').summernote();
+        });
+
         $(function () {
             console.log('Chi tiết thông tin khách hàng');
 

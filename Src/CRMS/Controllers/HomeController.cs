@@ -14,7 +14,7 @@ namespace CRMS.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]        
         public ActionResult Create(CustomerModel customer)
         {
             if (!ModelState.IsValid)
