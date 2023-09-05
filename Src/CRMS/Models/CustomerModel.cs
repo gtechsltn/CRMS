@@ -36,6 +36,7 @@ namespace CRMS.Models
 
         [DisplayName("Năm sinh")]
         [Range(1900, 9999, ErrorMessage = "Trường Năm sinh phải là số và nằm trong khoảng {1} và {2}")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "Trường Năm sinh phải là số")]
         public short? YoB { get; set; }
 
         [DisplayName("Thư điện tử")]
@@ -49,7 +50,7 @@ namespace CRMS.Models
         public string Hobbies { get; set; }
 
         [AllowHtml]
-        [DisplayName("Ghi chú")]        
+        [DisplayName("Ghi chú")]
         public string Note { get; set; }
     }
 }
