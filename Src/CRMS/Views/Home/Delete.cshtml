@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    bool blnNotFound = (bool)ViewBag.NotFound;
+    bool blnNotFound = (bool)(ViewBag.NotFound ?? false);
 }
 
 <div class="row">
@@ -121,7 +121,6 @@
                                 @Html.DisplayFor(model => model.Note)
                             </dd>
                         </dl>
-
                     }
                 }
             </div>

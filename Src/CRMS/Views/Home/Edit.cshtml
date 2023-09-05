@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    bool blnNotFound = (bool)(ViewBag.NotFound ?? false);
 }
 
 <div class="row">
@@ -22,117 +23,125 @@
                 </div>
             </div>
             <div class="card-body">
+                @{
+                    if (blnNotFound)
+                    {
+                        <h3>Không tìm thấy khách hàng</h3>
+                    }
+                    else
+                    {
+                        using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
 
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
+                            <div class="form-horizontal">
 
-                <div class="form-horizontal">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
 
-                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Id)
 
-                    @Html.HiddenFor(model => model.Id)
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" for="Gender">Giới tính</label>
+                                    <div class="col-md-10">
+                                        <select class="form-control list-box tri-state" id="Gender" name="Gender">
+                                            <option selected="selected" value="">Không rõ</option>
+                                            <option value="true">Nam</option>
+                                            <option value="false">Nữ</option>
+                                        </select>
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Gender" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-2" for="Gender">Giới tính</label>
-                        <div class="col-md-10">
-                            <select class="form-control list-box tri-state" id="Gender" name="Gender">
-                                <option selected="selected" value="">Không rõ</option>
-                                <option value="true">Nam</option>
-                                <option value="false">Nữ</option>
-                            </select>
-                            <span class="field-validation-valid text-danger" data-valmsg-for="Gender" data-valmsg-replace="true"></span>
-                        </div>
-                    </div>
+                                @Html.HiddenFor(model => model.Gender2)
 
-                    @Html.HiddenFor(model => model.Gender2)
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.CCCD, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.CCCD, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.CCCD, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.CCCD, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.CCCD, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.CCCD, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DoB2, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.DoB2, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.DoB2, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.DoB2, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.DoB2, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.DoB2, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.YoB, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.YoB, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.YoB, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.YoB, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.YoB, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.YoB, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Facebook, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Facebook, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Facebook, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Facebook, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Facebook, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Facebook, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" for="Hobbies">Sở thích</label>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" id="Hobbies" name="Hobbies" rows="10"></textarea>
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Hobbies" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-2" for="Hobbies">Ghi chú</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" id="Hobbies" name="Hobbies" rows="10"></textarea>
-                            <span class="field-validation-valid text-danger" data-valmsg-for="Hobbies" data-valmsg-replace="true"></span>
-                        </div>
-                    </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" for="Note">Ghi chú</label>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" id="Note" name="Note" rows="10">@Html.Raw(Model.Note)</textarea>
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="Note" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-2" for="Note">Ghi chú</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" id="Note" name="Note" rows="10">@Html.Raw(Model.Note)</textarea>
-                            <span class="field-validation-valid text-danger" data-valmsg-for="Note" data-valmsg-replace="true"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Lưu lại" class="btn btn-default" />
-                        </div>
-                    </div>
-                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Lưu lại" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
                 }
             </div>
             <!-- /.card-body -->

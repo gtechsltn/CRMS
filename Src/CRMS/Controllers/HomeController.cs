@@ -140,16 +140,14 @@ namespace CRMS.Controllers
         {
             var model = CustomerDao.GetById(id);
 
+            ViewBag.NotFound = (model == null);
+
             if (model == null)
             {
                 model = new CustomerModel();
-
-                ViewBag.NotFound = false;
             }
             else
             {
-                ViewBag.NotFound = true;
-
                 if (model.DoB.HasValue)
                 {
                     model.DoB2 = model.DoB.Value.ToString("yyyy-MM-dd");
@@ -162,6 +160,8 @@ namespace CRMS.Controllers
         public ActionResult Edit(int id)
         {
             var model = CustomerDao.GetById(id);
+
+            ViewBag.NotFound = (model == null);
 
             if (model == null)
             {
@@ -188,16 +188,14 @@ namespace CRMS.Controllers
         {
             var model = CustomerDao.GetById(id);
 
+            ViewBag.NotFound = (model == null);
+
             if (model == null)
             {
                 model = new CustomerModel();
-
-                ViewBag.NotFound = false;
             }
             else
             {
-                ViewBag.NotFound = true;
-
                 if (model.DoB.HasValue)
                 {
                     model.DoB2 = model.DoB.Value.ToString("yyyy-MM-dd");

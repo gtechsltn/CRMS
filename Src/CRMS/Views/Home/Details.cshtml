@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    bool blnNotFound = (bool)(ViewBag.NotFound ?? false);
+    string hobbies = Model.Hobbies ?? string.Empty;
+    string note = Model.Note ?? string.Empty;
 }
 
 <div class="row">
@@ -22,96 +25,104 @@
                 </div>
             </div>
             <div class="card-body">
+                @{
+                    if (blnNotFound)
+                    {
+                        <h3>Không tìm thấy khách hàng</h3>
+                    }
+                    else
+                    {
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </dt>
 
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Name)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Name)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Name)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.PhoneNumber)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.PhoneNumber)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.PhoneNumber)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Gender)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Gender)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Gender)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CCCD)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.CCCD)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.CCCD)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.CCCD)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Address)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Address)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Address)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Address)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DoB2)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.DoB2)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.DoB2)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.DoB2)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.YoB)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.YoB)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.YoB)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.YoB)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Email)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Email)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Facebook)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Facebook)
-                    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Facebook)
+                            </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Facebook)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Hobbies)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Hobbies)
-                    </dt>
+                            <dd>
+                                @Html.Raw(hobbies)
+                            </dd>
 
-                    <dd>
-                        @Html.TextAreaFor(model => model.Hobbies)
-                    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Note)
+                            </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Note)
-                    </dt>
-
-                    <dd>
-                        @Html.TextAreaFor(model => model.Note)
-                    </dd>
-                </dl>
+                            <dd>
+                                @Html.Raw(note)
+                            </dd>
+                        </dl>
+                    }
+                }
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
